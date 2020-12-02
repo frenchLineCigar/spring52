@@ -8,12 +8,8 @@ import javax.annotation.PostConstruct;
 @Service
 public class BookService {
 
+    @Autowired
     BookRepository bookRepository;
-
-    @Autowired(required = false)
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     @PostConstruct
     public void printRepositoryClass() {
