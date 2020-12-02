@@ -1,18 +1,19 @@
 package me.frenchline.spring52;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class BookService {
 
     @Autowired
-    BookRepository frenchBookRepository; //필드명을 동일하게 맞춘다
+    List<BookRepository> bookRepositories; //BookRepository 타입의 모든 Bean 주입
 
-    /* BookService에 어떤 BookRepository 타입의 Bean이 주입이 되었는지 출력하는 메서드 */
     public void printBookRepository() {
-        System.out.println(frenchBookRepository.getClass());
+//        this.bookRepositories.forEach(s -> System.out.println(s.getClass()));
+        this.bookRepositories.forEach(System.out::println);
     }
 
 }
