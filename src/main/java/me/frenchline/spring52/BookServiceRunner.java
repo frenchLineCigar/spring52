@@ -13,8 +13,14 @@ public class BookServiceRunner implements ApplicationRunner {
     @Autowired
     BookService bookService;
 
+    /**
+     * ApplicationRunner는 스프링 부트가 제공하는 인터페이스이고,
+     * 애플리케이션이 완전히 구동된 이후에 일을 한다.
+     * 따라서 가장 늦게 로그가 찍힘
+     */
     @Override
     public void run(ApplicationArguments args) throws Exception {
         bookService.printBookRepository();
     }
 }
+
