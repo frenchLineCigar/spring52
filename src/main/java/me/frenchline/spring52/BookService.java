@@ -9,12 +9,12 @@ import javax.annotation.PostConstruct;
 public class BookService {
 
     @Autowired
-    BookRepository bookRepository;
+    BookRepository myBookRepository;
 
     @PostConstruct
     public void setUp() {
         System.out.println("BookService.setUp");
-        System.out.println(bookRepository.getClass());
+        System.out.println(myBookRepository.getClass());
     }
 
 }
