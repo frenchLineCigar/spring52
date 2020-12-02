@@ -8,12 +8,8 @@ import javax.annotation.PostConstruct;
 @Service
 public class BookService {
 
+    @Autowired(required = false)
     BookRepository bookRepository;
-
-    @Autowired(required = false) //required: 의존성이 선택적인(Optional) 경우
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     @PostConstruct
     public void printRepositoryClass() {
