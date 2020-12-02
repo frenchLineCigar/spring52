@@ -3,17 +3,14 @@ package me.frenchline.spring52;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class BookService {
 
     @Autowired
-    List<BookRepository> bookRepositories; //BookRepository 타입의 모든 Bean 주입
+    BookRepository myBookRepository; //주입받을 Bean의 이름과 동일하게 필드이름을 맞춘다
 
     public void printBookRepository() {
-//        this.bookRepositories.forEach(s -> System.out.println(s.getClass()));
-        this.bookRepositories.forEach(System.out::println);
+        System.out.println(myBookRepository.getClass());
     }
 
 }
