@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "me.frenchline") //아예 통째로 잡기
+@ComponentScan(basePackages = {"me.frenchline.out", "me.frenchline.spring52"}) //부분 지정
 public class Spring52Application {
 
 	@Autowired
