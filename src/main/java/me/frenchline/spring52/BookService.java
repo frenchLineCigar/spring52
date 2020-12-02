@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-    @Autowired @Qualifier("frenchBookRepository") //주입받을 Bean의 이름을 명시
-    BookRepository bookRepository;
+    @Autowired
+    BookRepository frenchBookRepository; //필드명을 동일하게 맞춘다
 
     /* BookService에 어떤 BookRepository 타입의 Bean이 주입이 되었는지 출력하는 메서드 */
     public void printBookRepository() {
-        System.out.println(bookRepository.getClass());
+        System.out.println(frenchBookRepository.getClass());
     }
 
 }
