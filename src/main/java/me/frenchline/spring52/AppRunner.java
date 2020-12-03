@@ -21,7 +21,8 @@ public class AppRunner implements ApplicationRunner {
         System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.getDefault())); //getDefault: 운영체제의 기본값으로 읽어온다
         System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.KOREA));
         System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.US));
-//        System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.KOREAN));
-//        System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.ENGLISH));
+
+        System.out.println(messageSource.getMessage("lang", null, Locale.KOREA));
+        System.out.println(messageSource.getMessage("lang", null, Locale.US));
     }
 }

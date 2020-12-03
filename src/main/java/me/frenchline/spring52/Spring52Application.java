@@ -21,7 +21,8 @@ public class Spring52Application {
     @Bean
     public MessageSource messageSource() {
         var messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("classpath:/testdir/messages");
+        messageSource.setBasename("classpath:/messages");
+        messageSource.addBasenames("classpath:/testdir/dev");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
