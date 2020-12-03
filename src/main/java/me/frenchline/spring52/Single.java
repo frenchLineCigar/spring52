@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 public class Single {
 
     @Autowired
-    private ObjectProvider<Proto> proto;
+    private Proto proto;
 
     public Proto getProto() {
-        return proto.getIfAvailable();
+        return proto;
     }
 }
