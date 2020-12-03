@@ -16,13 +16,11 @@ public class AppRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(messageSource.getClass()); //Spring Boot의 경우 'messages'라는 Resource Bundle을 읽어들이는 ResourceBundleMessageSource가 이미 Bean으로 자동 등록되어 있다
-
-        System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.getDefault())); //getDefault: 운영체제의 기본값으로 읽어온다
-        System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.KOREA));
-        System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.US));
-
-        System.out.println(messageSource.getMessage("lang", null, Locale.KOREA));
-        System.out.println(messageSource.getMessage("lang", null, Locale.US));
+        while (true) {
+            //System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.getDefault())); //getDefault: 운영체제의 기본값으로 읽어온다
+            System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.KOREA));
+            System.out.println(messageSource.getMessage("greeting", new String[]{"lucy"}, Locale.US));
+            Thread.sleep(1000l); //1초마다 반복해서 콘솔을 찍으면서 다시 읽도록 (리소스를 캐쉬하는 시간이 최대 3초)
+        }
     }
 }
