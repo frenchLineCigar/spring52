@@ -1,6 +1,6 @@
 package me.frenchline.spring52;
 
-public class MyEvent { //Spring 4.2 이후부터는 제약사항이 사라졌다 (Spring Framework이 추구하는 철학: 비침투성)
+public class MyEvent {
 
     private int data;
     
