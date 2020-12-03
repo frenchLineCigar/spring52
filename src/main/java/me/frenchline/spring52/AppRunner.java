@@ -7,8 +7,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-
 @Component
 public class AppRunner implements ApplicationRunner {
 
@@ -21,9 +19,7 @@ public class AppRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Environment environment = ctx.getEnvironment(); //ApplicationContext extends EnvironmentCapable
-        System.out.println(Arrays.toString(environment.getActiveProfiles())); //현재 활성화 된 Profiles
-        System.out.println(Arrays.toString(environment.getDefaultProfiles())); //기본 Profiles: 어떤 Profile이든 상관없이 기본적으로 적용되는 Profile
-
-        
+        System.out.println(environment.getProperty("app.name")); //VM Options: -Dapp.name=spring5
+        System.out.println(environment.getProperty("app.about")); //app.properties
     }
 }
