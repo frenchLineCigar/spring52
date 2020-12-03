@@ -1,24 +1,18 @@
 package me.frenchline.spring52;
 
-import org.springframework.context.ApplicationEvent;
-
-public class MyEvent extends ApplicationEvent { //Spring 4.2 이전에는 항상 ApplicationEvent이란 추상 클래스를 상속받아야 했다
+public class MyEvent { //Spring 4.2 이후부터는 제약사항이 사라졌다 (Spring Framework이 추구하는 철학: 비침투성)
 
     private int data;
-
-    /**
-     * Create a new {@code ApplicationEvent}.
-     *
-     * @param source the object on which the event initially occurred or with
-     *               which the event is associated (never {@code null})
-     */
-    public MyEvent(Object source) {
-        super(source);
+    
+    private Object source; //이벤트를 발생시킨 소스를 갖고 싶다면 이렇게 필드를 두면 된다
+    
+    public MyEvent(Object source, int data) {
+        this.source = source;
+        this.data = data;
     }
 
-    public MyEvent(Object source, int data) {
-        super(source);
-        this.data = data;
+    public Object getSource() {
+        return source;
     }
 
     public int getData() {
