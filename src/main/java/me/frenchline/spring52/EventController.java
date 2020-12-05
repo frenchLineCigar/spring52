@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EventController {
 
-    @GetMapping("/event/{id}")
-    public String getEvent(@PathVariable Integer id) {
-        System.out.println(id);
-        return id.toString();
+    @GetMapping("/event/{event}")
+    public String getEvent(@PathVariable Event event) {
+        System.out.println(event); //Event{id=1, title='null'}
+        return event.getId().toString();
     }
 
 }

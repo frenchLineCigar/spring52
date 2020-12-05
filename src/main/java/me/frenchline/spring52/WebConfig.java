@@ -11,7 +11,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
+        //커스텀 포매터 등록
+        registry.addFormatter(new EventFormatter());
         //커스텀 컨버터 등록
-        registry.addConverter(new EventConverter.StringToEventConverter()); //모든 Controller에 동작한다
+//        registry.addConverter(new EventConverter.StringToEventConverter()); //모든 Controller에 동작한다
     }
 }

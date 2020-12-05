@@ -21,7 +21,7 @@ public class EventConverter {
         }
     }
 
-    /* org.springframework.core.convert.converter.Converter
+    /* org.springframework.core.convert.converter.Converter<S, T>
     1. 상태 정보 없음(Stateless) = Thread-Safe
     2. 상태정보가 없기 때문에 얼마든지 Bean으로 등록해서 써도 상관없다: ConverterRegistry에 등록해 사용
     */
