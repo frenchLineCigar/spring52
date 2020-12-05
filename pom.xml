@@ -8,7 +8,7 @@
         <version>2.3.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>me.frenchline</groupId>
+    <groupId>me.frenchline</groupId>ㅍ
     <artifactId>spring52</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring52</name>
@@ -35,6 +35,29 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- Spring Boot 2.3+, Validation Starter no longer included in web starters -->
+        <!-- 부트 2.3 이후부터 유효성 검사 스타터는 더 이상 웹 스타터에 포함되지 않는다 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- validation starter가 아닌 개별 의존성으로 추가시, 아래 2가지 중 하나를 택해서 사용 가능 -->
+        <!-- 1. Jakarta Bean Validation API 3.0.0 (Jul, 2020) -->
+<!--        <dependency>-->
+<!--            <groupId>jakarta.validation</groupId>-->
+<!--            <artifactId>jakarta.validation-api</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+
+        <!-- 2. Bean Validation API 2.0.1.Final (Dec, 2017) -->
+        <!--        <dependency>-->
+        <!--            <groupId>javax.validation</groupId>-->
+        <!--            <artifactId>validation-api</artifactId>-->
+        <!--            <version>2.0.1.Final</version>-->
+        <!--        </dependency>-->
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
