@@ -22,6 +22,6 @@ public class EventControllerTest {
     public void getTest() throws Exception {
         mockMvc.perform(get("/event/1"))
                  .andExpect(status().isOk())
-                .andExpect(content().string("1"));
+                .andExpect(content().string("1")); //컨버터 테스트
     }
 }
