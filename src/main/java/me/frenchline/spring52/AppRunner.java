@@ -15,6 +15,7 @@ public class AppRunner implements ApplicationRunner {
     /* ConversionService를 Bean을 받아올 수 있는지 확인 */
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        System.out.println(conversionService);
         System.out.println(conversionService.getClass().toString()); //(Spring Boot의 경우) WebConversionService <- DefaultFormattingConversionService를 상속하여 만듦
     }
 }

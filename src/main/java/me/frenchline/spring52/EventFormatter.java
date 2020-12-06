@@ -1,10 +1,12 @@
 package me.frenchline.spring52;
 
 import org.springframework.format.Formatter;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.util.Locale;
 
+@Component
 public class EventFormatter implements Formatter<Event> { //포매터로 처리할 타입 하나만 준다
 
     /* 조금 더 Web에 특화되어 있는 포매터 */

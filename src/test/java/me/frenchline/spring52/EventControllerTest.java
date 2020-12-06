@@ -12,7 +12,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest({
+        EventConverter.StringToEventConverter.class,
+        EventController.class}) //슬라이싱 테스트(계층형 테스트): Web과 관련된 Bean만 등록해준다. 주로 Controller들만 등록된다.
 public class EventControllerTest {
 
     @Autowired

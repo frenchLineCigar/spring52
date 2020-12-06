@@ -1,11 +1,13 @@
 package me.frenchline.spring52;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 public class EventConverter {
 
     /* Object 간 변환 가능한 일반적인 컨버터 */
     /* String -> Event 변환 */
+    @Component
     public static class StringToEventConverter implements Converter<String, Event> { //제네릭 타입으로 Source와 Target을 받는다
         @Override
         public Event convert(String source) {
@@ -14,6 +16,7 @@ public class EventConverter {
     }
 
     /* Event -> String 변환 */
+//    @Component
     public static class EventToStringConverter implements Converter<Event, String> {
         @Override
         public String convert(Event source) {
