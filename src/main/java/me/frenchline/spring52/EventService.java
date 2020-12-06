@@ -1,11 +1,14 @@
 package me.frenchline.spring52;
 
-/* <<Interface>> Subject */
-public interface EventService {
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Service;
 
-    void createEvent();
+@Service
+public class EventService {
 
-    void publishEvent();
-
-    void deleteEvent();
+    @NonNull //return에 null 허용 x
+    public String createEvent(@NonNull Event event) { //param에 null 허용 x
+//        return "hello " + event.getName();
+        return null;
+    }
 }

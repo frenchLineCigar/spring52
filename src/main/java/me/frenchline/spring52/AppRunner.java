@@ -5,17 +5,18 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-/* Client */
 @Component
 public class AppRunner implements ApplicationRunner {
 
     @Autowired
-    EventService eventService; //@Primary인 ProxySimpleEventService 타입의 빈이 주입
+    EventService eventService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        eventService.createEvent();
-        eventService.publishEvent();
-        eventService.deleteEvent();
+        String message = eventService.createEvent(null);
+//        Event event = new Event();
+//        event.setName("Lucy");
+//        String message = eventService.createEvent(event);
+//        System.out.println(message);
     }
 }
