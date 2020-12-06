@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class AppRunner implements ApplicationRunner {
 
     @Autowired
-    EventService eventService;
+    EventService eventService; //@Primary인 ProxySimpleEventService 타입의 빈이 주입
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
