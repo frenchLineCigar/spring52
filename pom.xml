@@ -36,6 +36,12 @@
             </exclusions>
         </dependency>
 
+        <!-- 애노테이션 기반의 스프링 @AOP 사용 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
         <!-- Spring Boot 2.3+, Validation Starter no longer included in web starters -->
         <!-- 부트 2.3 이후부터 유효성 검사 스타터는 더 이상 웹 스타터에 포함되지 않는다 -->
         <dependency>
