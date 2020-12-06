@@ -13,10 +13,6 @@ public class AppRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        String message = eventService.createEvent(null);
-//        Event event = new Event();
-//        event.setName("Lucy");
-//        String message = eventService.createEvent(event);
-//        System.out.println(message);
+        String message = eventService.createEvent(null); //Passing 'null' argument to parameter annotated as @NotNull
     }
 }
