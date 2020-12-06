@@ -11,7 +11,7 @@ public class PerfAspect {
 
     /* Advice 구현 */
     //이 Advice를 어떻게 적용할 것인가?를 정의
-    @Around("@annotation(PerfLogging)") //메서드를 감싸는(Around) 형태로 (Pointcut 이름)
+    @Around("bean(simpleEventService)") //bean이 가지고 있는 모든 public 메서드에 적용된다
     public Object logPerf(ProceedingJoinPoint pjp) throws Throwable { //ProceedingJoinPoint: Advice가 적용되는 지점(Target의 해당 메서드)
         long begin = System.currentTimeMillis();
         Object retVal = pjp.proceed();
